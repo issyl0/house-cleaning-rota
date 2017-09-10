@@ -1,2 +1,15 @@
 <h1>The date is <%= Date.today.strftime('%d/%m/%y') %>. It is week <b><%= @week %> of the rota.</h1>
 
+<% if @week == 'A' %>
+  <p><span class="name">Jack</span>'s jobs are: <%= @jack_week_a.join(", ") %></p>
+  <p><span class="name">Phil</span>'s jobs are: <%= @phil_week_a.join(", ") %></p>
+  <p><span class="name">Isabell</span>'s jobs are: <%= @isabell_week_a.join(", ") %></p>
+<% elsif @week == 'B' %>
+  <p><span class="name">Jack</span>'s jobs are: <%= @jack_week_b.join(", ") %></p>
+  <p><span class="name">Phil</span>'s jobs are: <%= @phil_week_b.join(", ") %></p>
+  <p><span class="name">Isabell</span>'s jobs are: <%= @isabell_week_b.join(", ") %></p>
+<% elsif @week == 'C' %>
+  <p><span class="name">Jack</span>'s jobs are: <%= @jack_week_c.join(", ") %></p>
+  <p><span class="name">Phil</span>'s jobs are: <%= @phil_week_c.join(", ") %></p>
+  <p><span class="name">Isabell</span>'s jobs are: <%= @isabell_week_c.join(", ") %></p>
+<% end %>
