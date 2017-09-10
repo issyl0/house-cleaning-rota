@@ -15,6 +15,10 @@ get '/' do
   erb :index
 end
 
+get '/week.json' do
+  { week: @week }.to_json
+end
+
 def calculate_week(current_week_commencing)
   if WEEK_A.include?(current_week_commencing)
     'A'
