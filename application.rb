@@ -15,6 +15,20 @@ get '/' do
   erb :index
 end
 
+get '/week.json' do
+  { week: @week }.to_json
+end
+
+get '/jobs.json' do
+  if @week == 'A'
+    { jack: @jack_week_a.join(', '), phil: @phil_week_a.join(', '), isabell: @isabell_week_a.join(', ') }.to_json
+  elsif @week == 'B'
+    { jack: @jack_week_b.join(', '), phil: @phil_week_b.join(', '), isabell: @isabell_week_b.join(', ') }.to_json
+  elsif @week == 'C'
+    { jack: @jack_week_c.join(', '), phil: @phil_week_c.join(', '), isabell: @isabell_week_c.join(', ') }.to_json
+  end
+end
+
 def calculate_week(current_week_commencing)
   if WEEK_A.include?(current_week_commencing)
     'A'
